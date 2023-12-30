@@ -4,11 +4,13 @@ import axios from 'axios';
 import Article from '../components/Article';
 import LiveScore from '../components/LiveScore';
 import News from '../components/News';
+import Fixture from '../components/Fixture';
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
   const [news, setNews] = useState([]);
   const [liveScores, setLiveScores] = useState([]);
+  const [fixtures, setFixtures] = useState([]);
 
   useEffect(() => {
     // Fetch data (replace with actual APIs)
@@ -17,10 +19,12 @@ const Home = () => {
         const articlesResponse = await axios.get('/api/articles');
         const newsResponse = await axios.get('/api/news');
         const liveScoresResponse = await axios.get('/api/live-scores');
+        const fixturesResponse = await axios.get('/api/fixtures');
 
         setArticles(articlesResponse.data);
         setNews(newsResponse.data);
         setLiveScores(liveScoresResponse.data);
+        setFixtures(fixturesResponse.data);
       } catch (error) {
         console.error('Error fetching data:', error.message);
       }
@@ -58,6 +62,14 @@ const Home = () => {
             <LiveScore key={score.id} score={score} />
           ))}
         </div>
+
+        <div>
+          <h2>Fixtures</h2>
+          {fixtures.map((fixture) => (
+            <Fixture key={fixture.id} fixture={fixture} />
+          ))}
+        </div>
+
       </div>
     </div>
   );
