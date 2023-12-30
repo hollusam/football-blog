@@ -58,15 +58,15 @@ const Home = () => {
 
         <div>
           <h2>Live Scores</h2>
-          {liveScores.map((score) => (
-            <LiveScore key={score.id} score={score} />
+          {liveScores.matches.map((match) => (
+            <LiveScore key={match.id} match={match} />
           ))}
         </div>
 
         <div>
           <h2>Fixtures</h2>
-          {fixtures.map((fixture) => (
-            <Fixture key={fixture.id} fixture={fixture} />
+          {fixtures.matches.map((match) => (
+            <Fixture key={match.id} match={match} />
           ))}
         </div>
 
