@@ -1,11 +1,11 @@
 import React from 'react';
 
-const LiveScore = ({ score }) => {
+const LiveScore = ({ match }) => {
   return (
     <div>
-      <h3>{score.team1} vs {score.team2}</h3>
-      <p>Score: {score.score1} - {score.score2}</p>
-      <p>Status: {score.status}</p>
+      <h3>{match.homeTeam.name} vs {match.awayTeam.name}</h3>
+      <p>Score: {match.score.fullTime.homeTeam} - {match.score.fullTime.awayTeam}</p>
+      <p>Status: {match.status}</p>
     </div>
   );
 };
