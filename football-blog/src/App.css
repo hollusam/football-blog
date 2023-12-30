@@ -17,3 +17,14 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
