@@ -1,17 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import { Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Team from './pages/Team';
-import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route path="/team" component={Team} />
-          <Route path="/" component={Home} />
-        </Switch>
+        <Routes>
+          <Route path="/team" element={<Team />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
       </div>
     </Router>
   );
